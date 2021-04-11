@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end"> <ion-menu-button></ion-menu-button></ion-buttons>
+    <ion-title>Accueil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p>Hello {{ firstName }} !</p>
+  <ion-button (click)="changeName()" color="tertiary" fill="outline"
+    >click here</ion-button
+  >
+  <h4>String</h4>
+  <p>minuscule: {{ chaine | lowercase }}</p>
+  <p>majuscule: {{ chaine | uppercase }}</p>
+  <p>title: {{ chaine | titlecase }}</p>
+  <br />
+  <h4>Nombres</h4>
+  <p>non formaté : {{ nombre }}</p>
+  <!-- x.y-z -->
+  <p>formaté : {{ nombre | number: '0.2-2' }}</p>
+  <p>formaté (monnaie) : {{ nombre | currency: 'EUR' }}</p>
+  <br />
+  <h4>Dates</h4>
+  <p>formaté {{ date | date : 'dd/MM/yyyy' }}</p>
+  <br />
+  <h4>*ngIf</h4>
+  <div *ngIf="!isAdmin; else fallback">
+    <p>Contenu réservé aux administrateurs</p>
+  </div>
+  <ng-template #fallback>
+    <div>contenu pour les non admins</div>
+  </ng-template>
+  <br />
+  <h4>Boucles</h4>
+  <ul>
+    <li *ngFor="let item of list">{{ item }}</li>
+  </ul>
+</ion-content>

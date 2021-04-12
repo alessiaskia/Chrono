@@ -16,19 +16,31 @@
       (click)="add()"
       [disabled]="!newItem"
       class="ion-margin"
-      >+</ion-button
     >
+      +
+    </ion-button>
   </ion-item>
 
   <ion-list>
-    <ion-item *ngFor="let item of items" (click)="openActionSheet(item)">
-      {{item.name}}
+    <ion-item *ngFor="let item of items">
+      <div (click)="openActionSheet(item)">
+        {{ item.name }}
+        <span slot="end">(quantité : {{ item.quantite }} )</span>
+      </div>
       <ion-icon
         *ngIf="item.isChecked"
         name="checkmark-circle"
         slot="end"
         color="success"
       ></ion-icon>
+      <ion-button
+        slot="end"
+        color="primary"
+        (click)="clear(item)"
+        class="ion-margin"
+      >
+        <ion-icon name="trash"></ion-icon
+      ></ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

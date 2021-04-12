@@ -22,7 +22,8 @@
     <ion-label>Séléctionner le pays</ion-label>
     <ion-select placeholder="Aucun" [(ngModel)]="selectedCountry">
       <ion-select-option [value]="null">Aucun</ion-select-option>
-      <ion-select-option *ngFor="let country of countries" [value]="country"
+      <ion-select-option *ngFor="let country of countries" [value]="country">
+        <!-- [value]="country" = vaut mieux passer lobjet entier comme ça on a déjà toutes les proprietés facilement accessibles (donc pas faire country.name) -->
         >{{ country.name }}</ion-select-option
       >
     </ion-select>

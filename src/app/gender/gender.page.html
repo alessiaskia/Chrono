@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end"> <ion-menu-button></ion-menu-button></ion-buttons>
+    <ion-title>Détectez le genre du prénom</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Prénom</ion-label>
+    <ion-input [(ngModel)]="firstName"></ion-input>
+  </ion-item>
+
+  <ion-item
+    ><ion-button (click)="search()" [disabled]="!firstName"
+      >Rechercher</ion-button
+    >
+  </ion-item>
+
+  <!-- afficher un select avec tous les pays -->
+  <ion-item>
+    <ion-label>Séléctionner le pays</ion-label>
+    <ion-select placeholder="Aucun" [(ngModel)]="selectedCountry">
+      <ion-select-option [value]="null">Aucun</ion-select-option>
+      <ion-select-option *ngFor="let country of countries" [value]="country"
+        >{{ country.name }}</ion-select-option
+      >
+    </ion-select>
+  </ion-item>
+
+  <!-- *ngIf = si pas défini, ne le montre pas : -->
+  <p *ngIf="result" class="ion-padding">Prénom : {{ result.name }}</p>
+  <p *ngIf="result" class="ion-padding">Genre : {{ result.gender }}</p>
+  <ion-progress-bar
+    *ngIf="result"
+    [color]="result.gender === 'male' ? 'primary' : 'danger'"
+    [value]="result.probability"
+  >
+    Probabilité : {{ result.probability }}
+  </ion-progress-bar>
+</ion-content>

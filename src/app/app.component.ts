@@ -9,6 +9,7 @@ export class AppComponent {
     { title: 'Accueil', url: '/home', icon: 'home'},
     { title: 'Chrono', url: '/chrono', icon: 'timer'},
     { title: 'Liste des courses', url: '/cart', icon: 'cart'},
+    { title: 'Gender detection', url: '/gender', icon: 'male-female'},
     // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'chrono',
     loadChildren: () => import('./chrono/chrono.module').then( m => m.ChronoPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
   }
 ];
 

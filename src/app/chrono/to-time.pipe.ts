@@ -13,9 +13,9 @@ export class ToTimePipe implements PipeTransform {
     let hours = Math.floor(value / 3600000);
 
     let hoursString = (hours < 10) ? "0" + hours : hours;
-  let minutesString = (minutes < 10) ? "0" + minutes : minutes;
-  let secondsString = (seconds < 10) ? "0" + seconds : seconds;
-  let millisecondesString = (millisecondes < 10) ? '00' + millisecondes : millisecondes;
+    let minutesString = (minutes < 10) ? "0" + minutes : minutes;
+    let secondsString = (seconds < 10) ? "0" + seconds : seconds;
+    let millisecondesString = (millisecondes < 10) ? '00' + millisecondes : millisecondes;
 
     let stringTime = hoursString + ':' + minutesString + ':' + secondsString + ':' + millisecondesString;
     return stringTime;

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end"> <ion-menu-button></ion-menu-button></ion-buttons>
+    <ion-title>Liste de Pokémons</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- afficher les prochains pokemons -->
+  <div class="space-between">
+    <ion-button [disabled]="!result?.previous" (click)="showPrevious()"
+      >Previous</ion-button
+    >
+    <ion-button [disabled]="!result?.next" (click)="showNext()"
+      >Next</ion-button
+    >
+  </div>
+
+  <!-- afficher une liste avec les premiers 20 pokemons -->
+  <ul *ngIf="result">
+    <li *ngFor="let item of result?.results" (click)="openDetails(item.url)">
+      {{ item.name | uppercase }}
+    </li>
+  </ul>
+</ion-content>

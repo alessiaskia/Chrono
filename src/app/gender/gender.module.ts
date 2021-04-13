@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GenderPageRoutingModule } from './gender-routing.module';
 
 import { GenderPage } from './gender.page';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     GenderPageRoutingModule,
-    HttpClientModule
+
   ],
   declarations: [GenderPage]
 })

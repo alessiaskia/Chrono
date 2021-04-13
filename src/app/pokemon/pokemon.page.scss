@@ -1,0 +1,42 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+  li {
+    padding: 10px 20px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    opacity: 0;
+    &:hover {
+      background-color: skyblue;
+    }
+  }
+}
+
+$compteur: 20;
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+@keyframes list-anim {
+  0% {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@for $i from 1 through 20 {
+  li:nth-child(#{$i}) {
+    animation-duration: 0.4s;
+    animation-name: list-anim;
+    animation-delay: $i * 0.05s;
+    animation-fill-mode: forwards;
+  }
+}
